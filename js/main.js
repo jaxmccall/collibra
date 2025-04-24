@@ -48,4 +48,32 @@ $(document).ready(function () {
    
    })
    
-
+   document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.getElementById("partner-carousel");
+    const logos = carousel.children;
+    const logoWidth = logos[0].offsetWidth + 20; // width + margin
+    let position = 0;
+  
+    // Clone first few logos to loop infinitely
+    for (let i = 0; i < 3; i++) {
+      const clone = logos[i].cloneNode(true);
+      carousel.appendChild(clone);
+    }
+  
+    setInterval(() => {
+      position++;
+      carousel.style.transform = `translateX(-${logoWidth * position}px)`;
+  
+      if (position >= logos.length - 3) {
+        setTimeout(() => {
+          carousel.style.transition = "none";
+          position = 0;
+          carousel.style.transform = `translateX(0px)`;
+          setTimeout(() => {
+            carousel.style.transition = "transform 0.5s ease-in-out";
+          }, 50);
+        }, 500);
+      }
+    }, 2000);
+  });
+  

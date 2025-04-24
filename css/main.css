@@ -711,3 +711,38 @@ height: 40px;
 
 
 }
+
+.partners-section {
+  background: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 2.5em;
+  color: #111;
+}
+
+.section-header p {
+  color: #555;
+  font-size: 1.1em;
+  margin-bottom: 40px;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+  width: 180px;
+  margin: 0 10px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
